@@ -7,17 +7,16 @@ from functools import reduce
   dynamic_reducer([1, 2, 3], '/') -> 0.16666667
 """
 
+def dynamic_reducer(collection, op):
+    operators = {
+        "+": operator.add,
+        "-": operator.sub,
+        "*": operator.mul,
+        "/": operator.truediv,
+    }
 
-def dynamic_reducer(numbers, ops): 
-  ops = {
-    '+': ops.add(),
-    '-': ops.sub(),
-    '*': ops.mul(),
-    '/': ops.truediv()
-  }
-  print(dynamic_reducer(*numbers, )
-  # if arg in args2.keys() == "+":
-  # print(dynamic_reducer.reduce(operator.add,*arg1))
+    return reduce((lambda total, element: operators[op](total, element)), collection)
 
+total = dynamic_reducer([1, 2, 3], '/') # 0.16666666666666666
 
-# dynamic_reducer([5, 4, 6], "+")
+print(total)
