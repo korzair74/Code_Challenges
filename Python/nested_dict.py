@@ -1,4 +1,3 @@
-
 daily_smarty_api = [
   {
     "posts": [
@@ -22,7 +21,7 @@ daily_smarty_api = [
   }
 ]
 
-""" When finished delete all of the dictionaries except one with data """
+
 """ print all the posts """
     #print(daily_smarty_api)
 """ print the first post """
