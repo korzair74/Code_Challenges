@@ -1,11 +1,11 @@
 def pretty_price(price, dec):
+  price = int(price)
+  
   if isinstance(dec, int):
-    cost = price + (dec / 100)
+    cost = round(price + (dec / 100), 2)
+    return cost
   else:
-    cost =price + dec
-  if isinstance(price, float):
-    return price
-  else:
-    return(cost)
+    cost = price + dec
 
-print(pretty_price(2, .49))    
+
+print(pretty_price(2, 69))    
