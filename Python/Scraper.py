@@ -6,7 +6,7 @@ def title_generator(links):
     titles = []
 
     def post_formatter(url):
-        if 'posts/' in url:
+        if 'title/' in url:
             url = url.split('/')[-1]
             url = url.replace('-', ' ')
             url = titleize(url)
@@ -23,13 +23,13 @@ def title_generator(links):
     return titles
 
 
-r = requests.get('http://www.dailysmarty.com/topics/python')
+r = requests.get('https://www.imdb.com/list/ls020043828')
 soup = BeautifulSoup(r.text, 'html.parser')
 links = soup.find_all('a')
 titles = title_generator(links)
 
-for title in titles:
-    print(title)
+for link in links:
+    print(link)
 
 
 
